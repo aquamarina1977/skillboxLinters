@@ -1,8 +1,9 @@
 from sqlalchemy import Column, String, Integer, Text
 from database import Base
 
+
 class Recipe(Base):
-    __tablename__ = 'recipes'
+    __tablename__ = "recipes"
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, index=True)
     author = Column(String, index=True)

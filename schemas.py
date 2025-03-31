@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class BaseRecipe(BaseModel):
     title: str
     author: str
@@ -7,8 +8,9 @@ class BaseRecipe(BaseModel):
     ingredients: str
     description: str
 
-class RecipeIn(BaseRecipe):
-    ...
+
+class RecipeIn(BaseRecipe): ...
+
 
 class RecipeOut(BaseRecipe):
     id: int
