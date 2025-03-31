@@ -29,8 +29,7 @@ def test_get_recipes(setup_database):
 
 
 def test_get_recipe(setup_database):
-    recipe_id = setup_database
-    response = client.get(f"/recipes/1")
+    response = client.get(f"/recipes/{1}")
     assert response.status_code == 200
     assert response.json()["title"] == "Рецепт борща"
 
