@@ -1,10 +1,12 @@
-from fastapi import FastAPI, HTTPException, Depends
+from typing import List
+
+from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from typing import List
+
 import models
 import schemas
-from database import async_session, engine, Base
+from database import Base, async_session, engine
 
 app = FastAPI()
 
