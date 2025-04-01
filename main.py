@@ -44,7 +44,7 @@ async def get_recipes(db: AsyncSession = db_dependency):
 
 @app.get("/recipes/{recipe_id}", response_model=schemas.RecipeOut)
 async def get_recipe(recipe_id: int, db: AsyncSession = db_dependency):
-    query = select(models.Recipe).where(recipe_id == models.Recipe.id)
+    query = select(models.Recipe).where(models.Recipe.id == recipe_id)
     result = await db.execute(query)
     recipe = result.scalar_one_or_none()
     if not recipe:

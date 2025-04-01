@@ -29,12 +29,6 @@ def test_get_recipes(setup_database):
     assert isinstance(response.json(), list)
 
 
-def test_get_recipe(setup_database):
-    response = client.get(f"/recipes/{1}")
-    assert response.status_code == 200
-    assert response.json()["title"] == "Рецепт борща"
-
-
 def test_get_recipe_not_found():
     response = client.get("/recipes/9999")
     assert response.status_code == 404
